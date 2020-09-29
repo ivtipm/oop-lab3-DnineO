@@ -7,7 +7,9 @@ from Bot import Bot
 import datetime
 from time import localtime, strftime, gmtime
 from PyQt5.Qt import *
+
 import os.path
+
 class Ui_MainWindow(object):
     def setupUi(self, main_window):
         main_window.setObjectName("MainWindow")
@@ -105,12 +107,12 @@ class ChatWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 self.TextEdit.append(time)
                 self.TextEdit.setAlignment(Qt.AlignRight)
                 self.toHtml() #пишем историю сообщений в файл
+
                 self.message_sended.emit()
             else:
                 self.TextEdit.append('Вы пытаетесь отправить пустое сообщение')
         except:
             self.TextEdit.append('Can\'t send the message')
-
 
     # def write_history(self):
     #     text = self.TextEdit.toPlainText()
@@ -147,7 +149,6 @@ class ChatWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.TextEdit.setCurrentFont(font)
         self.TextEdit.append(time)
         self.TextEdit.setAlignment(Qt.AlignRight)
-
 
 
     def center(self): # центрирование окна на экране

@@ -128,11 +128,11 @@ class ChatWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
 
     def toHtml(self):
-        with open('textEdit_toHtml.html', 'w')as f:
+        with open('textEdit_toHtml.html', 'w', encoding="utf-8")as f:
             f.write(self.TextEdit.toHtml())
 
     def fromHtml(self):
-        with open('textEdit_toHtml.html', 'r')as f:
+        with open('textEdit_toHtml.html', 'r', encoding="utf-8")as f:
             self.TextEdit.setHtml(f.read())
 
 
